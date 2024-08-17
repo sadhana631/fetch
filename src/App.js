@@ -1,5 +1,6 @@
 import {Route, Switch} from 'react-router-dom'
 
+import BlogItemDetails from './components/BlogItemDetails'
 import Header from './components/Header'
 import About from './components/About'
 import Home from './components/Home'
@@ -14,6 +15,7 @@ const App = () => (
       <Header />
       <div className="app-body">
         <Switch>
+          <Route exact path="/blogs/:id" component={BlogItemDetails} />
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
