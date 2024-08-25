@@ -15,10 +15,11 @@ class BlogItemDetails extends Component {
     const {match} = this.props
     const {params} = match
     const {id} = params
+    const response = await fetch(`https://apis.ccbp.in/blogs/${id}`)
     const data = await response.json()
     const updatedData = {
       title: data.title,
-      imageUrl: data.imageUrl,
+      imageUrl: data.image_Url,
       content: data.content,
       avatarUrl: data.avatar_url,
       author: data.author,
